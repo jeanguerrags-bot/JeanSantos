@@ -10,9 +10,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Jean OS">
 <meta name="robots" content="noindex, nofollow">
-<link rel="manifest" href="/manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2799,7 +2799,7 @@ document.addEventListener('submit',e=>{const f=e.target;if(f.id==='lock-f'){e.pr
 /* ---------- modo site (Vercel + Supabase) ---------- */
 const SB_URL='https://izarltoguhakdsxtecie.supabase.co';
 const SB_KEY='sb_publishable_LhuS8FLNVR54rN6P93xXSg_l8Zn_WcP';
-const SEED_URL='/seed.enc';
+const SEED_URL='seed.enc';
 const SITE={res:null,modo:'',busy:false};
 function sbMsg(e){const m=String((e&&(e.message||e.error_description||e.msg))||'');
   if(/invalid login|invalid credentials/i.test(m))return 'E-mail ou senha incorretos.';

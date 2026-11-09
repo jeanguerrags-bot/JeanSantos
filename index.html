@@ -969,6 +969,54 @@ input[type=text]:focus,input[type=password]:focus,input[type=date]:focus,input[t
 .insight b{color:var(--accent);font-weight:900}
 
 .linkbtn{background:none;border:0;padding:0;font:inherit;font-weight:700;color:var(--accent);cursor:pointer}
+/* v8: desempenho, referências e IA */
+.dz{display:grid;gap:16px;margin:6px 0 18px}
+.meta-c .meta-nums{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:10px 0 12px}
+.meta-nums div{background:var(--surface-2);border-radius:14px;padding:12px 10px;text-align:center}
+.meta-nums b{display:block;font-size:clamp(20px,4.6vw,28px);font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.meta-nums small{color:var(--muted);font-size:12px}
+.meta-nums .hl{background:var(--accent);color:var(--accent-ink)}.meta-nums .hl small{color:var(--accent-ink);opacity:.8}
+.meta-bar{height:12px;border-radius:99px;background:var(--surface-3);overflow:hidden}.meta-bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.meta-proj{margin:10px 0 4px;line-height:1.5}
+.sub-h{margin:14px 0 6px;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+.meta-plan{margin:0;padding-left:20px;display:grid;gap:7px;line-height:1.45}
+.reel-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:12px}
+.reel-c{background:var(--surface-2);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.vid{position:relative;aspect-ratio:9/12;background:#050b18;display:flex;align-items:center;justify-content:center}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+.vid-play{display:flex;flex-direction:column;align-items:center;gap:8px;background:none;border:0;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+.vp-ic{width:58px;height:58px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-size:22px;padding-left:4px}
+.reel-b{padding:12px 14px 14px;display:grid;gap:8px}
+.reel-h b{display:block;line-height:1.3}.reel-h small{color:var(--muted)}
+.reel-n{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.reel-n div{background:var(--surface-3);border-radius:10px;padding:7px 6px;text-align:center}
+.reel-n b{display:block;font-size:17px;font-weight:800}.reel-n small{color:var(--muted);font-size:11px}
+.reel-cmp{margin:0;font-weight:700;font-size:13px}.reel-cmp.up{color:var(--accent)}.reel-cmp.down{color:#ff8a65}
+.fonte{margin:0;color:var(--muted);font-size:12px}.fonte a{color:var(--accent)}
+.ref-p,.ref-a{margin:0;font-size:14px;line-height:1.45}.ref-a{background:rgba(212,242,60,.08);border-left:3px solid var(--accent);padding:6px 8px;border-radius:6px}
+.st-list{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
+.st-list li{display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;background:var(--surface-2);border-radius:10px;padding:8px 10px;font-size:14px}
+.st-list li.ok{outline:1px solid rgba(212,242,60,.35)}.st-h{font-weight:800;color:var(--accent)}.st-n{color:var(--muted);font-size:13px;text-align:right}
+.refs-cta{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.chat-box{display:flex;flex-direction:column;gap:10px;max-height:min(58vh,560px);overflow:auto;padding:4px 2px 8px;margin-top:6px}
+.msg{display:flex;flex-direction:column;max-width:88%}.msg.eu{align-self:flex-end;align-items:flex-end}.msg.ia{align-self:flex-start}
+.msg .bub{padding:10px 13px;border-radius:16px;line-height:1.5;font-size:15px}
+.msg.eu .bub{background:var(--accent);color:var(--accent-ink);border-bottom-right-radius:5px}
+.msg.ia .bub{background:var(--surface-2);border-bottom-left-radius:5px}
+.msg small{color:var(--muted);font-size:11px;margin-top:3px}.msg.pend .bub{opacity:.75}
+.typing{display:flex;gap:5px;padding:14px 16px}.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:tp 1s infinite}.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes tp{0%,80%,100%{opacity:.3;transform:translateY(0)}40%{opacity:1;transform:translateY(-3px)}}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:8px 0;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;background:var(--surface-2);border:1px solid var(--surface-3);color:inherit;border-radius:99px;padding:8px 12px;font:inherit;font-size:13px;cursor:pointer}
+.ia-f{display:flex;gap:8px;align-items:flex-end;position:sticky;bottom:0;background:var(--bg);padding:8px 0 4px}
+.ia-f textarea{flex:1;resize:none;border-radius:14px;border:1px solid var(--surface-3);background:var(--surface-2);color:inherit;font:inherit;padding:10px 12px;min-height:46px}
+.ia-key-f{display:flex;gap:8px;flex-wrap:wrap}.ia-key-f input{flex:1;min-width:200px;border-radius:12px;border:1px solid var(--surface-3);background:var(--surface-2);color:inherit;font:inherit;padding:10px 12px}
+.fab-ia{display:none}
+html.site .fab-ia{display:flex;position:fixed;right:16px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:40;width:56px;height:56px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-weight:900;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.35);font-size:15px;letter-spacing:.02em}
+@media (min-width:900px){html.site .fab-ia{bottom:24px;right:24px}}
+body[data-view="ia"] .fab-ia{display:none!important}
+@media (max-width:520px){.meta-nums{grid-template-columns:repeat(2,1fr)}.reel-g{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body class="locked">
@@ -991,6 +1039,8 @@ input[type=text]:focus,input[type=password]:focus,input[type=date]:focus,input[t
       <a href="#analise" data-tab="analise"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5.5 15.5l4-4.5 3 3 6-7"/><path d="M15 7h3.5v3.5"/></svg><span>Análise</span></a>
       <a href="#roteiros" data-tab="roteiros"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="9" width="17" height="11" rx="2"/><path d="M3.5 9l2.6-4.5h12l2.4 4.5M9 4.6L10.8 9M14.6 4.6L16.4 9"/></svg><span>Roteiros</span></a>
       <a href="#ganchos" data-tab="ganchos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3.5v9.5a5 5 0 0 1-10 0v-1.5"/><path d="M5 11.5l2.6 2.6"/><circle cx="15" cy="3.5" r="1.2"/></svg><span>Ganchos</span></a>
+      <a href="#refs" data-tab="refs"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg><span>Referências</span></a>
+      <a href="#ia" data-tab="ia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5h-7l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span>Pergunte à IA</span></a>
       <a href="#financeiro" data-tab="financeiro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16.5" height="11.5" rx="2.5"/><path d="M16 13.8h2"/></svg><span>Financeiro</span></a>
       <a href="#estrategia" data-tab="estrategia"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><span>Estratégia</span></a>
     </nav>
@@ -1016,6 +1066,8 @@ input[type=text]:focus,input[type=password]:focus,input[type=date]:focus,input[t
   <section id="v-roteiros" class="view" aria-label="Roteiros"></section>
   <section id="v-analise" class="view" aria-label="Análise"></section>
   <section id="v-ganchos" class="view" aria-label="Ganchos"></section>
+  <section id="v-refs" class="view" aria-label="Referências"></section>
+  <section id="v-ia" class="view" aria-label="Pergunte à IA"></section>
 
   <section id="v-estrategia" class="view" aria-label="Estratégia">
     <div class="vhead"><div><div class="eyebrow dot">Manual da máquina</div><h2 class="sec">Seu sistema de <em>Founder-Led Growth</em></h2><p class="muted">O seu perfil pessoal gera alcance; a palavra-chave leva pro direct; o direct vira cliente da Vértice Prime.</p></div></div>
@@ -1135,6 +1187,7 @@ Com isso eu te digo como eu dividiria Porto Belo, Itapema e Balneário pro seu c
   </div>
 </div>
 
+<a class="fab-ia" href="#ia" aria-label="Pergunte à IA">IA</a>
 <nav class="tabbar" aria-label="Seções">
   <a href="#inicio" data-tab="inicio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5v8.5a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></svg>Início</a>
   <a href="#marketing" data-tab="marketing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>Marketing</a>
@@ -1230,9 +1283,9 @@ let toastT=0;
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2800);}
 
 /* ---------- rotas ---------- */
-const VIEWS=['inicio','marketing','agenda','analise','roteiros','ganchos','financeiro','estrategia'];
+const VIEWS=['inicio','marketing','agenda','analise','roteiros','ganchos','financeiro','estrategia','refs','ia'];
 const VIEW_LABEL={inicio:'Visão geral',marketing:'Marketing',agenda:'Agenda',analise:'Análise',roteiros:'Roteiros',ganchos:'Ganchos',financeiro:'Financeiro',estrategia:'Estratégia'};
-function route(){let h=(location.hash||'').slice(1);if(h==='crescimento')h='analise';if(h==='hoje'||!h)h='inicio';S.ui.view=VIEWS.includes(h)?h:'inicio';$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+S.ui.view));$$('[data-tab]').forEach(a=>a.setAttribute('aria-current',a.dataset.tab===S.ui.view?'page':'false'));$('#crumb').textContent=VIEW_LABEL[S.ui.view];menu(false);hideTip();render();}
+function route(){setTimeout(()=>{try{document.body.dataset.view=S.ui.view;}catch(e){}},0);let h=(location.hash||'').slice(1);if(h==='crescimento')h='analise';if(h==='hoje'||!h)h='inicio';S.ui.view=VIEWS.includes(h)?h:'inicio';$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+S.ui.view));$$('[data-tab]').forEach(a=>a.setAttribute('aria-current',a.dataset.tab===S.ui.view?'page':'false'));$('#crumb').textContent=VIEW_LABEL[S.ui.view];menu(false);hideTip();render();}
 function menu(on){document.body.classList.toggle('menu',!!on);const b=$('.menubtn');if(b)b.setAttribute('aria-expanded',String(!!on));}
 
 let raf=0;
@@ -1240,7 +1293,7 @@ function schedule(){cancelAnimationFrame(raf);raf=requestAnimationFrame(render);
 function render(){
   renderSync();try{renderSide();}catch(e){}
   const v=S.ui.view;
-  try{keep(['ask-in','chat-in','g-tema'],()=>{
+  try{keep(['ask-in','chat-in','g-tema','ia-in'],()=>{
     if(v==='inicio')renderInicio();
     else if(v==='marketing')renderMarketing();
     else if(v==='agenda')renderAgenda();
@@ -1248,6 +1301,8 @@ function render(){
     else if(v==='roteiros')renderRoteiros();
     else if(v==='analise')renderAnalise();
     else if(v==='ganchos')renderGanchos();
+    else if(v==='refs')renderRefs();
+    else if(v==='ia')renderIA();
     else renderEstrDyn();
   });}catch(e){console.error(e);}
 }
@@ -1438,6 +1493,7 @@ function renderAnalise(){
   const per_opts=[[7,'7 dias'],[30,'30 dias'],[60,'60 dias'],[90,'90 dias'],[0,'<span class="lg">Desde o início</span><span class="sh">Tudo</span>']];
   const loading=isLoading('snapshots')||isLoading('roteiros');
   el.innerHTML=`<div class="vhead"><div><div class="eyebrow dot">Análise</div><h2 class="sec">Como você está <em>indo</em></h2><p class="muted">Crescimento, o que mais funcionou e o que afinar no ${PLAT[plat]}.</p></div><button class="btn" data-act="snap">Atualizar números</button></div>
+  ${desempenhoHTML()}
   ${askHTML()}
   <div class="controls" style="margin-top:14px"><div class="seg" role="group" aria-label="Plataforma">${Object.entries({ig:'Instagram',yt:'YouTube',pod:'Podcast'}).map(([k,v])=>`<button data-act="plat" data-v="${k}" aria-pressed="${k===plat}">${v}</button>`).join('')}</div>
   <div class="seg" role="group" aria-label="Período">${per_opts.map(([k,v])=>`<button data-act="periodo" data-v="${k}" aria-pressed="${k===per}">${v}</button>`).join('')}</div></div>
@@ -2583,7 +2639,7 @@ function renderFinanceiro(){
 function finGeral(per,h,el){
   const L=finP(S.fin.filter(x=>x.data&&x.data>=per.ini&&x.data<=per.fim));const t=finTotais(L);
   const abS=finP(S.fin.filter(x=>finAb(x)&&x.tipo!=='entrada'&&x.data<=per.fim));const abE=finP(S.fin.filter(x=>finAb(x)&&x.tipo==='entrada'&&x.data<=per.fim));const venc=abS.filter(x=>x.data<h);
-  const ser=finSerie(per.fim.slice(0,7),6);const w=cardW(el,2);
+  const ser=finSerie(per.fim.slice(0,7),12);const w=cardW(el,2);
   const fold={};t.cats.forEach(([c,v])=>{const k=catDonut(c);fold[k]=(fold[k]||0)+v;});
   const parts=Object.entries(fold).sort((a,b)=>(a[0]==='Outros')-(b[0]==='Outros')||b[1]-a[1]).map(([n,v])=>[n,v,n==='Outros'?'var(--c0)':catVar(n)]);
   const top=t.cats[0];const pc=v=>(Math.round(v/(t.gas||1)*1000)/10).toLocaleString('pt-BR');
@@ -2603,16 +2659,16 @@ function finGeral(per,h,el){
     ${tile('Investido',brl(t.inv),'','Guardado ou aplicado no período',[],'target')}
   </div>
   <div class="fin-g">
-    <section class="card w7"><div class="secthead"><h3 class="ct">Análise de gastos · por categoria</h3></div><p class="muted sm">Participação de cada categoria nos gastos do período</p>
+    <section class="card w7"><div class="secthead"><h3 class="ct">Onde você mais gasta · gráfico de pizza</h3></div><p class="muted sm">Participação de cada categoria nos gastos do período</p>
       ${top?`<p class="maior">Maior gasto: <b>${esc(top[0])}</b> · ${pc(top[1])}% do total</p>`:''}
-      ${parts.length?`<div class="donut-wrap" style="margin-top:8px">${donutSVG(parts,t.gas)}<ul class="catbars">${t.cats.slice(0,8).map(([c,v])=>`<li><div class="cb-t"><span><i style="background:${catDonut(c)==='Outros'?'var(--c0)':catVar(c)}"></i>${esc(c)}</span><span><small>${pc(v)}%</small>${brl(v)}</span></div><div class="cb-b"><b style="width:${Math.max(2,Math.round(v/(t.cats[0][1]||1)*100))}%"></b></div></li>`).join('')}</ul></div>`:'<div class="empty-chart">Sem gastos no período.</div>'}</section>
-    <section class="card w5"><div class="secthead"><h3 class="ct">Evolução: entradas x saídas</h3><span class="muted sm">6 meses</span></div><div class="legend"><span><i style="background:var(--in)"></i>Entradas</span><span><i style="background:var(--out)"></i>Saídas</span></div>
-      ${ser.some(s=>s.a||s.b)?withW(w,()=>gbarChart(ser,'Entradas e saídas por mês')):'<div class="empty-chart">Sem lançamentos nos últimos meses.</div>'}</section>
+      ${parts.length?`<div class="donut-wrap" style="margin-top:8px">${donutSVG(parts,t.gas)}<ul class="catbars">${t.cats.slice(0,8).map(([c,v])=>`<li><div class="cb-t"><span><i style="background:${catDonut(c)==='Outros'?'var(--c0)':catVar(c)}"></i>${esc(c)}</span><span><small>${pc(v)}%</small>${brl(v)}</span></div><div class="cb-b"><b style="width:${Math.max(2,Math.round(v/(t.cats[0][1]||1)*100))}%"></b></div></li>`).join('')}</ul></div>`:'<div class="empty-chart">Sem gastos lançados neste período. Lance o primeiro e o gráfico de pizza mostra onde vai o seu dinheiro.<div class="actions" style="justify-content:center;margin-top:10px"><button class="btn sm primary" data-act="fin-novo" data-v="saida">+ Lançar gasto</button></div></div>'}</section>
+    <section class="card w5"><div class="secthead"><h3 class="ct">Entradas x saídas, mês a mês</h3><span class="muted sm">12 meses</span></div><div class="legend"><span><i style="background:var(--in)"></i>Entradas</span><span><i style="background:var(--out)"></i>Saídas</span></div>
+      ${ser.some(s=>s.a||s.b)?withW(w,()=>gbarChart(ser,'Entradas e saídas por mês')):'<div class="empty-chart">Ainda sem lançamentos. Cada entrada e saída que você lançar aparece aqui, mês a mês.<div class="actions" style="justify-content:center;margin-top:10px"><button class="btn sm primary" data-act="fin-novo" data-v="entrada">+ Entrada</button><button class="btn sm" data-act="fin-novo" data-v="saida">+ Saída</button></div></div>'}</section>
     <section class="card"><div class="secthead"><h3 class="ct">Próximas contas</h3><button class="linkbtn" data-act="fin-aba" data-v="pagar">Ver todas</button></div>${prox.length?`<ul class="contas">${prox.map(x=>contaLi(x,h)).join('')}</ul>`:'<p class="muted" style="margin-top:10px">Nenhuma conta em aberto. Lance aluguel, condomínio, escola e fatura com o vencimento.</p>'}</section>
     <section class="card"><div class="secthead"><h3 class="ct">Maiores gastos do período</h3></div>${gastos.length?hbars(gastos.map(x=>({l:x.descricao||x.categoria,v:num(x.valor)||0,s:`${ddmm(x.data)} · ${x.categoria||''} · ${x.pessoa||''}`})),v=>brl(v)):'<p class="muted" style="margin-top:10px">Sem gastos no período.</p>'}</section>
   </div>`;}
 function finInd(per,h,el){
-  const ser=finSerie(per.fim.slice(0,7),6);const w=cardW(el,2);
+  const ser=finSerie(per.fim.slice(0,7),12);const w=cardW(el,2);
   const L=finP(S.fin.filter(x=>x.data&&x.data>=per.ini&&x.data<=per.fim));const t=finTotais(L);const tx=t.ent?t.sobra/t.ent:null;
   const ant=ser.slice(-4,-1).filter(s=>s.b);const med=ant.length?ant.reduce((a,s)=>a+s.b,0)/ant.length:null;
   const gR=L.filter(x=>!finAb(x)&&x.tipo!=='entrada'&&x.categoria!=='Investimentos');const fixos=soma(gR.filter(x=>x.fixo||x.recorrente));const ticket=gR.length?t.gas/gR.length:null;
@@ -2919,11 +2975,152 @@ async function siteBoot(){
   S.db=makeSbDb(sb);
   document.body.classList.remove('locked');window.scrollTo(0,0);
   try{await seedSite();}catch(e){}
-  subscribe();gcalSite();render();
+  subscribe();gcalSite();iaChecaChave();render();
 }
 document.addEventListener('submit',e=>{const f=e.target;if(!S.site)return;
   if(f.id==='site-f'){e.preventDefault();siteLogin();}
   else if(f.id==='site-n'){e.preventDefault();siteNovaSenha('site-n');}});
+
+S.referencias=[];S.iachat=[];S.iaChave=null;S.iaBusy=false;S.ui.dper='hoje';
+/* ---------- v8: desempenho, referências e IA ---------- */
+const META_PADRAO={alvo:5000,ate:'2026-12-31'};
+function metaSeg(){const m=(S.config&&S.config.metaSeguidores)||{};return {alvo:num(m.alvo)||META_PADRAO.alvo,ate:m.ate||META_PADRAO.ate};}
+function segHist(){return [...S.snapshots].filter(x=>x.ig&&num(x.ig.seguidores)!=null).sort(byData).map(x=>({d:x.data,v:num(x.ig.seguidores),aprox:!!x.ig.aprox}));}
+function diasEntre(a,b){return Math.round((Date.parse(b+'T12:00:00Z')-Date.parse(a+'T12:00:00Z'))/864e5);}
+const fmtN=v=>v==null||!isFinite(v)?'—':Math.round(v).toLocaleString('pt-BR');
+function reelCode(p){const u=String(p.url||'');const m=u.match(/\/(?:reel|p)\/([A-Za-z0-9_-]+)/);return m?m[1]:(/^[A-Za-z0-9_-]{8,}$/.test(p.id||'')?p.id:'');}
+function videoBox(code,rotulo){if(!code)return '';return `<div class="vid" data-code="${esc(code)}"><button class="vid-play" data-act="ver-video" data-code="${esc(code)}" aria-label="Assistir ${esc(rotulo||'vídeo')}"><span class="vp-ic">▶</span><span>Assistir aqui</span></button></div>`;}
+function metaHTML(){
+  const m=metaSeg();const h=hojeISO();const hist=segHist();const at=hist.at(-1);const dias=Math.max(1,diasEntre(h,m.ate));
+  if(!at)return `<section class="card meta-c"><div class="secthead"><h3 class="ct">Meta: ${fmtN(m.alvo)} seguidores até ${ddmmyy(m.ate)}</h3></div><p class="muted">Assim que o painel tiver o número de seguidores de hoje, aparece aqui quanto falta por dia.</p></section>`;
+  const falta=Math.max(0,m.alvo-at.v);const porDia=falta/dias;const pct=Math.min(100,Math.round(at.v/m.alvo*1000)/10);
+  const base=hist.find(x=>diasEntre(x.d,at.d)<=30&&diasEntre(x.d,at.d)>=3);
+  const ritmo=base?(at.v-base.v)/Math.max(1,diasEntre(base.d,at.d)):null;
+  const proj=ritmo!=null?Math.round(at.v+ritmo*dias):null;
+  const reels=dias*((S.config&&S.config.metas&&S.config.metas.reelsDia)||5);const porReel=falta/Math.max(1,reels);
+  return `<section class="card meta-c">
+    <div class="secthead"><h3 class="ct">Meta: ${fmtN(m.alvo)} seguidores até ${ddmmyy(m.ate)}</h3><span class="muted sm">${at.aprox?'número aproximado do perfil':'número exato'} · ${ddmm(at.d)}</span></div>
+    <div class="meta-nums"><div><b>${fmtN(at.v)}</b><small>hoje</small></div><div><b>${fmtN(falta)}</b><small>faltam</small></div><div><b>${dias}</b><small>dias</small></div><div class="hl"><b>+${fmtN(Math.ceil(porDia))}</b><small>por dia</small></div></div>
+    <div class="meta-bar" role="img" aria-label="${pct}% da meta"><i style="width:${Math.max(2,pct)}%"></i></div>
+    <p class="meta-proj">${ritmo!=null?`No ritmo atual (${ritmo>=0?'+':''}${fmtN(ritmo)} por dia), você chega em <b>${fmtN(proj)}</b> em ${ddmmyy(m.ate)}. ${proj>=m.alvo?'Dá pra bater a meta mantendo o ritmo.':`Precisa de <b>${fmtN(Math.ceil(porDia-ritmo))} seguidores a mais por dia</b> do que o ritmo de hoje.`}`:'O ritmo atual aparece quando houver alguns dias de número de seguidores registrados.'}</p>
+    <h4 class="sub-h">O que fazer pra bater</h4>
+    <ol class="meta-plan">
+      <li><b>${fmtN(reels)} Reels até ${ddmm(m.ate)}</b> (${(S.config&&S.config.metas&&S.config.metas.reelsDia)||5} por dia). Cada um precisa trazer, em média, <b>${fmtN(Math.ceil(porReel))} seguidores</b>.</li>
+      <li><b>Gancho nos 3 primeiros segundos</b> e texto na tela: é o que mais segura quem ainda não te segue.</li>
+      <li><b>1 Reels de envio por semana</b> (checklist ou lista que a pessoa manda pra alguém): envio é o que leva o vídeo pra fora dos seus seguidores.</li>
+      <li><b>Collab com um perfil maior</b> (corretor, arquiteto, investidor ou empresário da região): o mesmo Reels aparece pros dois públicos.</li>
+      <li><b>Carrossel "Comece aqui" fixado</b> e bio com a palavra-chave: transforma quem visita o perfil em seguidor.</li>
+      <li><b>Responder todo comentário na primeira hora</b> e caixinha nos stories todo dia.</li>
+    </ol>
+  </section>`;
+}
+function dperIni(){const h=hojeISO();const p=S.ui.dper||'hoje';return p==='hoje'?h:p==='7'?addDays(h,-6):addDays(h,-29);}
+function reelsPeriodo(){const ini=dperIni();return S.posts.filter(p=>(p.tipo||'reel')==='reel'&&p.data&&p.data>=ini).sort((a,b)=>(b.data+(b.hora||'')).localeCompare(a.data+(a.hora||''))||((num(b.metricas&&b.metricas.views)||0)-(num(a.metricas&&a.metricas.views)||0)));}
+function reelCard(p,med){
+  const m=p.metricas||{};const v=num(m.views);const code=reelCode(p);const pub=/vidiq|público/i.test(p.origem||'');
+  const cmp=v!=null&&med?Math.round((v/med-1)*100):null;
+  const dica=v==null?'':cmp==null?'':cmp>=50?'Acima da média: repita esse formato e esse tipo de gancho.':cmp<=-50?'Abaixo da média: teste outro gancho nos 3 primeiros segundos e texto na tela.':'Na média dos seus Reels.';
+  const it=(lb,x)=>`<div><b>${x==null?'—':compact(x)}</b><small>${lb}</small></div>`;
+  return `<article class="reel-c">
+    ${videoBox(code,p.titulo)}
+    <div class="reel-b">
+      <div class="reel-h"><b>${esc(p.titulo||trunc(p.texto||'Reels',60))}</b><small>${ddmm(p.data)}${p.hora?' · '+esc(p.hora):''}${p.duracaoSeg?' · '+p.duracaoSeg+'s':''}</small></div>
+      <div class="reel-n">${it('views',v)}${it('curtidas',num(m.curtidas))}${it('coment.',num(m.comentarios))}${it('envios',num(m.envios))}${it('salvos',num(m.salvamentos))}${it('seguidores',num(m.seguidores))}</div>
+      ${cmp!=null?`<p class="reel-cmp ${cmp>=0?'up':'down'}">${cmp>=0?'▲':'▼'} ${Math.abs(cmp)}% vs. a mediana dos seus Reels</p>`:''}
+      ${dica?`<p class="muted sm">${esc(dica)}</p>`:''}
+      <p class="fonte">${pub?'Números públicos (atualizados pela IA). Alcance, retenção e envios chegam pelo Metricool.':'Metricool'}${p.url?` · <a href="${esc(p.url)}" target="_blank" rel="noopener">abrir no Instagram</a>`:''}</p>
+    </div></article>`;
+}
+function storiesHojeHTML(){
+  const h=hojeISO();const st=S.stories.filter(s=>s.data===h).sort((a,b)=>String(a.hora||'').localeCompare(String(b.hora||'')));
+  const r=S.roteiros.find(x=>x.data===h);const plan=r?arr(r.stories):[];const feitos=r?arr(r.storiesFeitos):[];
+  if(st.length)return `<ul class="st-list">${st.map(s=>`<li><span class="st-h">${esc(s.hora||'')}</span><span class="st-t">${esc(s.tipo||'Story')}${s.texto?' · '+esc(trunc(s.texto,50)):''}</span><span class="st-n"><b>${compact(num(s.views))}</b> views · ${compact(num(s.respostas))} resp. · ${compact(num(s.saidas))} saídas</span></li>`).join('')}</ul>`;
+  return `<p class="muted sm">Os números de cada story (views, respostas e quem saiu) chegam pelo Metricool depois que o Instagram estiver como conta profissional. Enquanto isso, marque o que você já postou:</p>
+  <ul class="st-list">${plan.map((s,i)=>`<li class="${feitos[i]?'ok':''}"><span class="st-h">${esc(s.hora||'')}</span><span class="st-t">${esc(s.tipo||'')}</span><span class="st-n">${feitos[i]?'✓ postado':'—'}</span></li>`).join('')||'<li class="muted">Sem stories planejados hoje.</li>'}</ul>`;
+}
+function desempenhoHTML(){
+  const p=S.ui.dper||'hoje';const rs=reelsPeriodo();
+  const todos=S.posts.filter(x=>num(x.metricas&&x.metricas.views)!=null).map(x=>num(x.metricas.views)).sort((a,b)=>a-b);
+  const med=todos.length?todos[Math.floor(todos.length/2)]:null;
+  const somaV=rs.reduce((a,x)=>a+(num(x.metricas&&x.metricas.views)||0),0);
+  return `<div class="dz">
+    ${metaHTML()}
+    <section class="card">
+      <div class="secthead"><h3 class="ct">Seus Reels</h3><div class="seg" role="group" aria-label="Período">${[['hoje','Hoje'],['7','7 dias'],['30','30 dias']].map(([k,l])=>`<button data-act="dper" data-v="${k}" aria-pressed="${k===p}">${l}</button>`).join('')}</div></div>
+      <p class="muted sm">${rs.length} Reels ${p==='hoje'?'hoje':'no período'} · ${compact(somaV)} views${med?` · mediana dos seus Reels: ${compact(med)} views`:''}</p>
+      ${rs.length?`<div class="reel-g">${rs.map(x=>reelCard(x,med)).join('')}</div>`:`<div class="empty-chart">${p==='hoje'?'Nenhum Reels de hoje registrado ainda. A IA atualiza os números ao longo do dia.':'Sem Reels no período.'}</div>`}
+    </section>
+    <section class="card"><div class="secthead"><h3 class="ct">Stories de hoje</h3><a class="linkbtn" href="#marketing">Ver o plano do dia</a></div>${storiesHojeHTML()}</section>
+    <section class="card refs-cta"><div><h3 class="ct">Vídeos das referências</h3><p class="muted sm">Os Reels que mais rodaram do Alfredo, do Gustavo e do Davi, pra assistir aqui e copiar o formato.</p></div><a class="btn primary" href="#refs">Abrir referências</a></section>
+  </div>`;
+}
+/* ----- Referências ----- */
+const REF_ORDEM=['alfredosoares','gustavoprivate','davibraga','theobraga'];
+function renderRefs(){
+  const el=$('#v-refs');if(!el)return;const refs=[...S.referencias].sort((a,b)=>REF_ORDEM.indexOf(a.id)-REF_ORDEM.indexOf(b.id));
+  const atual=S.ui.ref&&refs.find(r=>r.id===S.ui.ref)?S.ui.ref:(refs[0]&&refs[0].id);const r=refs.find(x=>x.id===atual);
+  const reels=r?[...arr(r.reels)].sort((a,b)=>(num(b.plays)||0)-(num(a.plays)||0)):[];
+  el.innerHTML=`<div class="vhead"><div><div class="eyebrow dot">Referências</div><h2 class="sec">Vídeos que <em>funcionam</em></h2><p class="muted">Os Reels que mais rodaram de quem você quer seguir: assista, veja por que funcionou e como você adapta pra Vértice.</p></div></div>
+  ${!refs.length?'<div class="empty-chart">Carregando referências…</div>':`<nav class="tabs-v" role="tablist" aria-label="Referências">${refs.map(x=>`<button role="tab" data-act="ref-tab" data-v="${esc(x.id)}" aria-selected="${x.id===atual}">${esc(x.nome||x.id)}</button>`).join('')}</nav>
+  ${r?`<p class="muted sm" style="margin:10px 0 14px">@${esc(r.handle||r.id)}${r.seguidores?' · '+esc(r.seguidores)+' seguidores':''}${r.atualizadoEm?' · atualizado em '+ddmm(String(r.atualizadoEm).slice(0,10)):''}${r.resumo?' · '+esc(r.resumo):''}</p>
+  ${r.privado?`<div class="card"><p><b>O Instagram do ${esc(r.nome)} está privado.</b> Nenhuma ferramenta consegue ler os Reels dele por enquanto.</p>${r.alternativa?`<p class="muted">${esc(r.alternativa)}</p>`:''}</div>`:''}
+  <div class="reel-g">${reels.map((x,i)=>`<article class="reel-c ref">
+    ${videoBox(x.code,x.gancho||x.legenda)}
+    <div class="reel-b">
+      <div class="reel-h"><b>${esc(x.gancho||trunc(x.legenda||'',70))}</b><small>${ddmm(x.data||'')}${x.duracao?' · '+x.duracao+'s':''}</small></div>
+      <div class="reel-n">${[['views',x.plays],['curtidas',x.likes],['coment.',x.comments]].map(([lb,v])=>`<div><b>${compact(num(v))}</b><small>${lb}</small></div>`).join('')}</div>
+      ${x.porque?`<p class="ref-p"><b>Por que funciona:</b> ${esc(x.porque)}</p>`:''}
+      ${x.adaptar?`<p class="ref-a"><b>Como você adapta:</b> ${esc(x.adaptar)}</p>`:''}
+      <div class="actions"><button class="btn sm" data-act="ref-ideia" data-ref="${esc(r.id)}" data-i="${i}">Virar ideia</button>${x.url?`<a class="btn sm ghost" href="${esc(x.url)}" target="_blank" rel="noopener">Abrir no Instagram</a>`:''}</div>
+    </div></article>`).join('')}</div>`:''}`}`;
+}
+/* ----- IA ----- */
+const IA_SUG=['Como eu estou indo essa semana?','O que eu melhoro no próximo Reels?','Quanto falta pra 5 mil seguidores e o que fazer hoje?','Me dá 3 ganchos pra amanhã','Analisa o Reels que eu postei hoje'];
+function renderIA(){
+  const el=$('#v-ia');if(!el)return;const msgs=[...S.iachat].sort((a,b)=>String(a.criadoEm).localeCompare(String(b.criadoEm))).slice(-60);
+  const semChave=S.iaChave===false;
+  el.innerHTML=`<div class="vhead"><div><div class="eyebrow dot">IA</div><h2 class="sec">Pergunte à <em>IA</em></h2><p class="muted">Ela lê os seus números, a semana de conteúdo e a meta de seguidores antes de responder.</p></div></div>
+  ${semChave?`<section class="card ia-key"><h3 class="ct">Ativar respostas na hora</h3><p class="muted sm">Pra IA responder na hora, cole aqui uma chave da API da Anthropic (crie em console.anthropic.com → API Keys). Cada pergunta custa poucos centavos de dólar. Sem a chave, suas perguntas ficam guardadas e a IA responde na próxima atualização do painel.</p><form id="ia-key-f" class="ia-key-f"><input id="ia-key" type="password" autocomplete="off" placeholder="sk-ant-…" aria-label="Chave da API"><button class="btn primary" type="submit">Salvar chave</button></form><p class="lock-err" id="ia-key-e" aria-live="polite"></p></section>`:''}
+  <div class="chat-box" id="chat-box">${msgs.length?msgs.map(m=>`<div class="msg ${m.papel==='ia'?'ia':'eu'}${m.status==='pendente'?' pend':''}"><div class="bub">${m.papel==='ia'?mdLite(m.texto||''):esc(m.texto||'')}</div><small>${m.papel==='ia'?'IA':'Você'} · ${hhmm(m.criadoEm)}${m.status==='pendente'?' · aguardando resposta':''}</small></div>`).join(''):`<div class="msg ia"><div class="bub">Oi, Jean. Me pergunta como você está indo, o que melhorar no próximo vídeo ou o que fazer pra chegar nos 5 mil seguidores.</div></div>`}${S.iaBusy?'<div class="msg ia"><div class="bub typing"><i></i><i></i><i></i></div></div>':''}</div>
+  <div class="chips">${IA_SUG.map(s=>`<button class="chip" data-act="ia-sug" data-v="${esc(s)}">${esc(s)}</button>`).join('')}</div>
+  <form id="ia-f" class="ia-f"><textarea id="ia-in" rows="2" placeholder="Escreva sua pergunta…" aria-label="Pergunta para a IA"></textarea><button class="btn primary" type="submit" ${S.iaBusy?'disabled':''}>Enviar</button></form>`;
+  const cb=$('#chat-box');if(cb)cb.scrollTop=cb.scrollHeight;
+}
+function hhmm(iso){try{return new Date(iso).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',timeZone:TZ});}catch(e){return '';}}
+function mdLite(t){return esc(t).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\n/g,'<br>');}
+async function iaChecaChave(){if(!S.sb)return;try{const {data}=await S.sb.rpc('ia_tem_chave');S.iaChave=!!data;}catch(e){S.iaChave=false;}schedule();}
+async function iaEnviar(texto){
+  texto=String(texto||'').trim();if(!texto||S.iaBusy)return;if(!S.db){toast('Abra o painel para usar a IA.');return;}
+  const agora=new Date().toISOString();const hist=[...S.iachat].sort((a,b)=>String(a.criadoEm).localeCompare(String(b.criadoEm))).slice(-10).map(m=>({papel:m.papel,texto:m.texto}));
+  const ref=await S.db.collection('chat').add({papel:'eu',texto,criadoEm:agora,status:'enviado'});
+  if(!S.sb||S.iaChave===false){await upd('chat/'+ref.id,{status:'pendente'});toast('Pergunta guardada. A IA responde na próxima atualização.');return;}
+  S.iaBusy=true;render();
+  try{const {data,error}=await S.sb.functions.invoke('ia-chat',{body:{pergunta:texto,historico:hist}});
+    if(error)throw error;
+    if(data&&data.erro==='sem_chave'){S.iaChave=false;await upd('chat/'+ref.id,{status:'pendente'});}
+    else if(data&&data.texto){await S.db.collection('chat').add({papel:'ia',texto:data.texto,criadoEm:new Date().toISOString(),pergunta:ref.id});}
+    else throw new Error((data&&data.detalhe)||'sem resposta');}
+  catch(e){await upd('chat/'+ref.id,{status:'pendente'}).catch(()=>{});toast('A IA não respondeu agora. A pergunta ficou guardada.');}
+  finally{S.iaBusy=false;render();}
+}
+async function iaSalvarChave(){
+  const k=($('#ia-key')?.value||'').trim();const err=$('#ia-key-e');if(!/^sk-ant-/.test(k)){err.textContent='A chave começa com sk-ant-.';return;}
+  try{const {error}=await S.sb.rpc('set_ia_key',{k});if(error)throw error;S.iaChave=true;toast('Chave salva. A IA já responde na hora.');render();
+    const pend=S.iachat.filter(m=>m.papel==='eu'&&m.status==='pendente').sort((a,b)=>String(b.criadoEm).localeCompare(String(a.criadoEm)))[0];if(pend){await upd('chat/'+pend.id,{status:'enviado'});}}
+  catch(e){err.textContent='Não consegui salvar a chave. Tente de novo.';}
+}
+document.addEventListener('submit',e=>{const f=e.target;
+  if(f.id==='ia-f'){e.preventDefault();const t=$('#ia-in');const v=t?t.value:'';if(t)t.value='';iaEnviar(v);}
+  else if(f.id==='ia-key-f'){e.preventDefault();iaSalvarChave();}});
+document.addEventListener('keydown',e=>{if(e.target&&e.target.id==='ia-in'&&e.key==='Enter'&&!e.shiftKey&&innerWidth>=900){e.preventDefault();const f=$('#ia-f');if(f)f.requestSubmit();}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act;
+  if(a==='dper'){S.ui.dper=b.dataset.v;render();}
+  else if(a==='ver-video'){const box=b.closest('.vid');const code=b.dataset.code;if(box&&code)box.innerHTML=`<iframe src="https://www.instagram.com/reel/${encodeURIComponent(code)}/embed/" loading="lazy" allowfullscreen scrolling="no" title="Reels"></iframe>`;}
+  else if(a==='ref-tab'){S.ui.ref=b.dataset.v;render();}
+  else if(a==='ref-ideia'){const r=S.referencias.find(x=>x.id===b.dataset.ref);const x=r&&[...arr(r.reels)].sort((p,q)=>(num(q.plays)||0)-(num(p.plays)||0))[+b.dataset.i];if(!x||!S.db)return;
+    S.db.collection('ideias').add({titulo:x.adaptar||x.gancho||'Ideia de referência',texto:x.porque||'',origem:'Referência @'+(r.handle||r.id),url:x.url||'',criadoEm:new Date().toISOString(),usado:false}).then(()=>toast('Virou ideia. Está em Ganchos e ideias.')).catch(()=>toast('Não consegui salvar.'));}
+  else if(a==='ia-sug'){iaEnviar(b.dataset.v);}
+});
 
 /* ---------- dados ---------- */
 function subscribe(){
@@ -2932,7 +3129,8 @@ function subscribe(){
   const fail=e=>{clearTimeout(timer);S.status='erro';S.err=(e&&e.code)||'';schedule();};
   db.doc('config/main').onSnapshot(s=>{S.config=s.exists?s.data():null;S.loaded.add('config');fresh(s.metadata);schedule();},fail);
   const col=(name,post)=>db.collection(name).onSnapshot(q=>{let v=q.docs.map(d=>({...d.data(),id:d.id}));if(post)v=post(v);S[name]=v;S.loaded.add(name);fresh(q.metadata);schedule();},fail);
-  col('roteiros',v=>v.sort(byData));col('snapshots');col('briefings');col('ganchos');col('tarefas');col('radar');col('analises');col('ideias');col('posts',v=>v.sort(byData));col('stories',v=>v.sort(byData));col('fin',v=>v.sort(byData));col('youtube');
+  col('roteiros',v=>v.sort(byData));col('snapshots');col('briefings');col('ganchos');col('tarefas');col('radar');col('analises');col('ideias');col('posts',v=>v.sort(byData));col('stories',v=>v.sort(byData));col('fin',v=>v.sort(byData));col('youtube');col('referencias');
+  db.collection('chat').onSnapshot(q=>{S.iachat=q.docs.map(d=>({...d.data(),id:d.id}));schedule();},()=>{});
   db.doc('fin_cfg/main').onSnapshot(x=>{S.fincfg=x.exists?x.data():{};schedule();},()=>{});
 }
 async function boot(){

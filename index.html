@@ -65,7 +65,7 @@ p{margin:0}
 .banner p{background:var(--surface-2);border:1px solid var(--line-2);border-radius:12px;padding:12px 14px;font-size:14px}
 
 /* abas do celular */
-.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(17,17,19,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(17,17,19,.95);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(6,1fr);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
 .tabbar a{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;color:var(--muted);text-decoration:none;font-size:11px;font-weight:550;border-radius:10px}
 .tabbar a svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tabbar a[aria-current="page"]{color:var(--ink)} .tabbar a[aria-current="page"] svg{color:var(--accent)}
@@ -1017,6 +1017,16 @@ html.site .fab-ia{display:flex;position:fixed;right:16px;bottom:calc(84px + env(
 body[data-view="ia"] .fab-ia{display:none!important}
 @media (max-width:520px){.meta-nums{grid-template-columns:repeat(2,1fr)}.reel-g{grid-template-columns:1fr}}
 
+/* placar da meta e aba YouTube */
+.placar .pl-g{display:grid;gap:16px;margin-top:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (min-width:900px){.placar .pl-g{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.pl-i .n{font-size:26px}.pl-i .n span{font-size:14px;color:var(--muted);font-weight:700;letter-spacing:0}
+.pl-s{display:block;margin-top:6px;color:var(--muted);font-size:12.5px;line-height:1.35}.mm .pl-s b{display:inline;font-size:inherit;font-weight:800;letter-spacing:0;text-transform:none;color:var(--ink)}
+.yt-ul{margin-top:6px}.steps .yt-ul li,.yt-ul li{display:list-item;grid-template-columns:none;padding:0;background:none;border:0;border-radius:0;font-size:14px}
+.yt-fr{margin-top:6px;font-size:13.5px;color:var(--accent-2)}
+.yt-fe{font-size:17px}
+.yt-prev{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:8px}.yt-prev li{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:14px}
+
 </style>
 </head>
 <body class="locked">
@@ -1038,6 +1048,7 @@ body[data-view="ia"] .fab-ia{display:none!important}
       <a href="#agenda" data-tab="agenda"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 13.5h2M14 13.5h2M8 17h2"/></svg><span>Agenda</span></a>
       <a href="#analise" data-tab="analise"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5.5 15.5l4-4.5 3 3 6-7"/><path d="M15 7h3.5v3.5"/></svg><span>Análise</span></a>
       <a href="#roteiros" data-tab="roteiros"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="9" width="17" height="11" rx="2"/><path d="M3.5 9l2.6-4.5h12l2.4 4.5M9 4.6L10.8 9M14.6 4.6L16.4 9"/></svg><span>Roteiros</span></a>
+      <a href="#youtube" data-tab="youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.2 9.4v5.2l4.4-2.6z"/></svg><span>YouTube</span></a>
       <a href="#ganchos" data-tab="ganchos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3.5v9.5a5 5 0 0 1-10 0v-1.5"/><path d="M5 11.5l2.6 2.6"/><circle cx="15" cy="3.5" r="1.2"/></svg><span>Ganchos</span></a>
       <a href="#refs" data-tab="refs"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M10 9.2v5.6l4.8-2.8z"/></svg><span>Referências</span></a>
       <a href="#ia" data-tab="ia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5.5h14a1.5 1.5 0 0 1 1.5 1.5v8a1.5 1.5 0 0 1-1.5 1.5h-7l-4.5 3.5V16.5H5A1.5 1.5 0 0 1 3.5 15V7A1.5 1.5 0 0 1 5 5.5z"/><path d="M8 11h.01M12 11h.01M16 11h.01"/></svg><span>Pergunte à IA</span></a>
@@ -1064,6 +1075,7 @@ body[data-view="ia"] .fab-ia{display:none!important}
   <section id="v-agenda" class="view" aria-label="Agenda"></section>
   <section id="v-financeiro" class="view" aria-label="Financeiro"></section>
   <section id="v-roteiros" class="view" aria-label="Roteiros"></section>
+  <section id="v-youtube" class="view" aria-label="YouTube"></section>
   <section id="v-analise" class="view" aria-label="Análise"></section>
   <section id="v-ganchos" class="view" aria-label="Ganchos"></section>
   <section id="v-refs" class="view" aria-label="Referências"></section>
@@ -1193,6 +1205,7 @@ Com isso eu te digo como eu dividiria Porto Belo, Itapema e Balneário pro seu c
   <a href="#marketing" data-tab="marketing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10v4a1 1 0 0 0 1 1h2l5 4V5L7 9H5a1 1 0 0 0-1 1z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a7.5 7.5 0 0 1 0 11"/></svg>Marketing</a>
   <a href="#agenda" data-tab="agenda"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.5h17M8 3v4M16 3v4M8 13.5h2M14 13.5h2M8 17h2"/></svg>Agenda</a>
   <a href="#analise" data-tab="analise"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M5.5 15.5l4-4.5 3 3 6-7"/><path d="M15 7h3.5v3.5"/></svg>Análise</a>
+  <a href="#youtube" data-tab="youtube"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.2 9.4v5.2l4.4-2.6z"/></svg>YouTube</a>
   <a href="#financeiro" data-tab="financeiro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18v3"/><rect x="4" y="8" width="16.5" height="11.5" rx="2.5"/><path d="M16 13.8h2"/></svg>Finanças</a>
 </nav>
 
@@ -1283,8 +1296,8 @@ let toastT=0;
 function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2800);}
 
 /* ---------- rotas ---------- */
-const VIEWS=['inicio','marketing','agenda','analise','roteiros','ganchos','financeiro','estrategia','refs','ia'];
-const VIEW_LABEL={inicio:'Visão geral',marketing:'Marketing',agenda:'Agenda',analise:'Análise',roteiros:'Roteiros',ganchos:'Ganchos',financeiro:'Financeiro',estrategia:'Estratégia'};
+const VIEWS=['inicio','marketing','agenda','analise','roteiros','youtube','ganchos','financeiro','estrategia','refs','ia'];
+const VIEW_LABEL={inicio:'Visão geral',marketing:'Marketing',agenda:'Agenda',analise:'Análise',roteiros:'Roteiros',ganchos:'Ganchos',financeiro:'Financeiro',estrategia:'Estratégia',youtube:'YouTube',refs:'Referências',ia:'Pergunte à IA'};
 function route(){setTimeout(()=>{try{document.body.dataset.view=S.ui.view;}catch(e){}},0);let h=(location.hash||'').slice(1);if(h==='crescimento')h='analise';if(h==='hoje'||!h)h='inicio';S.ui.view=VIEWS.includes(h)?h:'inicio';$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+S.ui.view));$$('[data-tab]').forEach(a=>a.setAttribute('aria-current',a.dataset.tab===S.ui.view?'page':'false'));$('#crumb').textContent=VIEW_LABEL[S.ui.view];menu(false);hideTip();render();}
 function menu(on){document.body.classList.toggle('menu',!!on);const b=$('.menubtn');if(b)b.setAttribute('aria-expanded',String(!!on));}
 
@@ -1302,6 +1315,7 @@ function render(){
     else if(v==='analise')renderAnalise();
     else if(v==='ganchos')renderGanchos();
     else if(v==='refs')renderRefs();
+    else if(v==='youtube')renderYouTube();
     else if(v==='ia')renderIA();
     else renderEstrDyn();
   });}catch(e){console.error(e);}
@@ -1713,14 +1727,15 @@ function openConfig(){
 
 /* ---------- IA ---------- */
 const BASE_CTX=`PERFIL
-Jean Guerra dos Santos, 21 anos. Fundador da Vértice Prime Negócios Imobiliários, no litoral norte de Santa Catarina (Porto Belo, Itapema, Balneário Camboriú, Itajaí). Cresceu dentro de obra: a família tem 37 anos de mercado imobiliário e mais de 50 obras entregues. Investiu quase R$ 1 milhão no escritório. Tem esposa e um filho e faz faculdade de engenharia. NÃO use o pai dele como personagem (nada de "meu pai me ensinou", "o que meu pai olha"): fale da experiência do próprio Jean, que cresceu em obra e entende de obra. Rotina: acorda às 4h, leitura às 5h, academia às 6h, grava às 8h.
+Jean Guerra dos Santos, 21 anos. Fundador da Vértice Prime Negócios Imobiliários, no litoral norte de Santa Catarina (Porto Belo, Itapema, Balneário Camboriú, Itajaí). Cresceu dentro de obra: a família tem 37 anos de mercado imobiliário e mais de 50 obras entregues. Investiu quase R$ 1 milhão no escritório. Tem esposa e um filho e faz faculdade de engenharia. O pai dele pode aparecer como referência de quem constrói e investe há 37 anos ("o que meu pai olha antes de investir"), sempre contado pelo Jean e com os critérios que o Jean confirmar (use [colchetes]); nunca a narrativa de herdeiro, sucessor ou "filho do dono". O centro é a experiência do próprio Jean: nasceu na obra e entende de obra. Rotina: acorda às 4h, leitura às 5h, academia às 6h, grava às 8h.
 ESTRATÉGIA: Founder-Led Growth. O perfil pessoal do Jean gera alcance e leads para a Vértice Prime: compradores e investidores de imóvel no litoral catarinense, muitos de fora de SC.
 TESES: 1) O comprador olha o decorado; o construtor olha o que vai ser entregue. 2) No litoral, a pergunta não é qual cidade; é qual rua, qual produto e qual construtora. 3) No alto padrão, a sua estrutura fala antes de você. 4) Equilíbrio não existe; existe prioridade.
-MIX SEMANAL: seg Tese/opinião · ter Olho de construtor (educação) · qua Bastidores da Vértice Prime · qui Mercado com dado · sex História do Jean (o que a obra ensinou) · sáb Jornada/rotina · dom Resposta à caixinha.
+ESTILO (pedido do Jean em 21/11): mais bastidor e resultado, no jeito do Alfredo Soares (abre com número e dá a opinião dele em cima de um caso) e do Gustavo (@gustavoprivate: bastidor do comercial com o resultado escrito na tela e o time batendo meta), dentro do nicho do Jean. Todo conteúdo puxa pra uma empresa: a Vértice Prime (OBRA, PLANTA ou MAPA no direct; Operação Trovão na quinta) ou a construtora da família. Dado de mercado só como gancho de um caso, nunca o vídeo inteiro.
+MIX SEMANAL: seg Bastidor e resultado da Vértice · ter Olho de construtor (nasci na obra) · qua O que meu pai olha antes de investir · qui Operação Trovão · sex Obra da construtora ou caso do litoral com opinião · sáb Jornada/rotina · dom Caixinha ou corte do YouTube.
 CTAs com palavra-chave no direct: OBRA (3 coisas que o construtor olha), PLANTA (checklist de 10 itens da compra na planta), MAPA (como dividir Porto Belo, Itapema e Balneário para morar ou investir).
 SINAIS DO INSTAGRAM EM 2026: tempo de visualização é o principal; envios por alcance levam o Reels a quem não segue; curtidas por alcance pesam para seguidores; salvamentos indicam valor; taxa de pulo mede os 3 primeiros segundos (nota do gancho); conteúdo original ganha distribuição.
 REFERÊNCIAS: founders que ensinam e documentam (Alejandro Ferreira: formatos, ganchos e teses para gerar lead; Athos Vilarins e Gustavo de Oliveira: bastidores de jovens founders; Theo Braga: CEO como mídia e podcast; Alfredo Soares: nicho claro, conteúdo que vende e muitos cortes por dia; Toguro: rotina inteira em série, do treino ao escritório). Use os princípios; nunca imite a voz nem invente frases deles.
-VOLUME: a meta é de vários Reels por dia (o principal com roteiro e Reels rápidos registrando o dia: academia, carro, escritório, obra e casa) e cerca de 10 stories por dia. Cada vídeo com uma ideia só e nunca o mesmo vídeo postado duas vezes.
+VOLUME: 2 Reels por dia (o principal das 12h, com roteiro curto: abertura, o que desenvolver e fechamento; e 1 do dia, de 10 a 30 s, gravado na hora: bastidor, obra, visita ou resultado), 5 stories por dia, 3 estáticos por semana e 1 vídeo no YouTube por semana. Cada vídeo com uma ideia só e nunca o mesmo vídeo postado duas vezes.
 REGRAS: português do Brasil coloquial, frases curtas, primeira pessoa do Jean. Nada de clichê de coach. Nunca invente números, clientes ou histórias: quando faltar um fato real, use [colchetes] para o Jean preencher. Não polarize com política, gênero ou religião. Não prometa rentabilidade nem dê parecer jurídico.`;
 function resumoPost(r){const m=r.metricas||{};const g=ganchoSel(r)||{};return `${r.data} · ${r.pilar} · "${r.titulo}" · gancho [${g.tipo||'?'}] "${g.fala||''}" · duração ${m.duracao??r.duracaoSeg??'?'}s · views ${m.views??'?'} · alcance ${m.alcance??'?'} · tempo médio ${m.tempoMedio??'?'}s · taxa de pulo ${m.skip??'?'}% · curtidas ${m.curtidas??'?'} · comentários ${m.comentarios??'?'} · envios ${m.envios??'?'} · salvamentos ${m.salvamentos??'?'} · seguidores ${m.seguidores??'?'} · leads ${m.dms??'?'}`;}
 function ctx(){const c=S.config||{};const hist=S.roteiros.filter(r=>r.metricas).sort(byData).slice(-10).map(r=>'- '+resumoPost(r)).join('\n')||'(ainda sem posts com métricas registradas)';const ant=S.posts.filter(p=>!p.roteiro&&p.metricas).sort(byData).slice(-12).map(p=>'- '+resumoHist(p)).join('\n');return `${BASE_CTX}\nPosicionamento: ${c.posicionamento||''}\n\nDESEMPENHO RECENTE (do mais antigo ao mais novo):\n${hist}${ant?`\n\nREELS DO PERFIL FORA DO JEAN OS (os mais recentes, de ${S.posts.find(p=>p.origem)?.origem||'importação'}):\n${ant}`:''}`;}
@@ -1852,7 +1867,7 @@ function histPosts(ini){return S.posts.filter(p=>!p.roteiro&&p.metricas&&p.data>
 function resumoHist(p){const m=p.metricas||{};return `${p.data} · ${p.pilar||'post antigo'} · "${p.titulo||trunc(p.texto,70)}" · duração ${p.duracaoSeg??'?'}s · views ${m.views??'?'} · alcance ${m.alcance??'?'} · curtidas ${m.curtidas??'?'} · comentários ${m.comentarios??'?'} · envios ${m.envios??'?'} · salvamentos ${m.salvamentos??'?'} · seguidores ${m.seguidores??'?'}`;}
 function storyEmpty(){return '<p class="muted" style="margin-top:10px">Registre os números dos stories na aba Hoje (Stories de hoje, Registrar números) ou mande os prints.</p>';}
 const YT_PLANO=[['Conversa da semana (podcast em vídeo)','Um convidado do mercado: corretor, arquiteto ou investidor. Vira vídeo longo e 8 a 10 cortes para Reels e Shorts.'],['Diário de founder (toda semana, 8 a 12 min)','Bastidores da semana da Vértice Prime: decisões, números, erros. É o formato que o Athos usa no canal dele.'],['Tour de obra explicado por quem constrói','O que o construtor olha em cada fase. É busca que dura anos no YouTube.'],['Quanto custa montar uma imobiliária de alto padrão','Com os números reais do escritório. Atrai empresário e mostra estrutura pro cliente.'],['Litoral de SC: onde comprar em 2027','Dados do FipeZap + visão de construtor por cidade. Isca de lead investidor (MAPA).']];
-function ytHTMLantigo(snaps){return simplesHTML(snaps,'yt',[['inscritos','Inscritos'],['views','Views totais'],['videos','Vídeos publicados']])+`<section class="card" style="margin-top:14px"><h3 class="ct">O que gravar no YouTube</h3><p class="muted sm" style="margin-top:4px">Vídeo longo dá autoridade e rende 5 a 10 cortes para Reels e Shorts.</p><ol class="rx-list">${YT_PLANO.map(([t,d])=>`<li><b>${esc(t)}</b><span>${esc(d)}</span></li>`).join('')}</ol>${aiOn()?'<div class="actions"><button class="btn ai" data-act="ask" data-i="4">Gerar mais pautas com IA</button></div>':''}</section>`;}
+function ytHTMLantigo(snaps){return simplesHTML(snaps,'yt',[['inscritos','Inscritos'],['views','Views totais'],['videos','Vídeos publicados']])+`<section class="card" style="margin-top:14px"><h3 class="ct">O que gravar no YouTube</h3><p class="muted sm" style="margin-top:4px">Vídeo longo dá autoridade e rende 5 a 10 cortes para Reels e Shorts. O roteiro do vídeo da semana fica na <a href="#youtube">aba YouTube</a>.</p><ol class="rx-list">${YT_PLANO.map(([t,d])=>`<li><b>${esc(t)}</b><span>${esc(d)}</span></li>`).join('')}</ol>${aiOn()?'<div class="actions"><button class="btn ai" data-act="ask" data-i="4">Gerar mais pautas com IA</button></div>':''}</section>`;}
 const MES_C=['jan','fev','mar','abr','mai','jun','jul','ago','set','out','nov','dez'];
 function mesC(ym){const [y,m]=String(ym).split('-');return (MES_C[+m-1]||m)+'/'+String(y).slice(2);}
 function horasTxt(min){min=Math.round(min||0);return min<60?`${min} min`:`${(min/60).toLocaleString('pt-BR',{maximumFractionDigits:min<600?1:0})} h`;}
@@ -1889,7 +1904,7 @@ function ytHTML(snaps){
   <div class="gstack">
   <section class="card"><div class="row-sb"><h3 class="ct">${per?'Views por dia':'Views por ano'}</h3><span class="muted sm">${per?esc(perTxt):'desde 2016'}</span></div>${ch1}<p class="note-src">${fonte}</p></section>
   <section class="card"><div class="row-sb"><h3 class="ct">De onde vieram as views do canal</h3><span class="muted sm">por mês, desde jun/25</span></div>${insight?`<p class="insight">${insight}</p>`:''}${rec.length?barChart(rec.map(x=>({k:mesC(x.m),v:x.v,t:`${mesC(x.m)} · ${compact(x.e)} engajadas`})),'Views por mês',{unit:' views'}):'<div class="empty-chart">Sem meses com dados.</div>'}</section>
-  <section class="card"><h3 class="ct">O que gravar no YouTube</h3><p class="muted sm" style="margin-top:4px">Vídeo longo dá autoridade e rende 5 a 10 cortes para Reels e Shorts.</p><ol class="rx-list">${YT_PLANO.map(([t,d])=>`<li><b>${esc(t)}</b><span>${esc(d)}</span></li>`).join('')}</ol>${aiOn()?'<div class="actions"><button class="btn ai" data-act="ask" data-i="4">Gerar mais pautas com IA</button></div>':''}</section>
+  <section class="card"><h3 class="ct">O que gravar no YouTube</h3><p class="muted sm" style="margin-top:4px">Vídeo longo dá autoridade e rende 5 a 10 cortes para Reels e Shorts. O roteiro do vídeo da semana fica na <a href="#youtube">aba YouTube</a>.</p><ol class="rx-list">${YT_PLANO.map(([t,d])=>`<li><b>${esc(t)}</b><span>${esc(d)}</span></li>`).join('')}</ol>${aiOn()?'<div class="actions"><button class="btn ai" data-act="ask" data-i="4">Gerar mais pautas com IA</button></div>':''}</section>
   </div>`;
 }
 function podHTML(snaps){return simplesHTML(snaps,'pod',[['plays','Plays'],['episodios','Episódios']])+`<section class="card" style="margin-top:14px"><h3 class="ct">Próximo episódio</h3><p style="margin-top:6px">Conversa com quem constrói o litoral: um corretor, um arquiteto ou um investidor. Grave em vídeo: vira episódio, vídeo no YouTube e 8 a 10 cortes para Reels.</p></section>`;}
@@ -2092,6 +2107,7 @@ document.addEventListener('click',async e=>{
     case 'fin-orc-salvar':finOrcSalvar();break;
     case 'fin-regra':finRegra(b.dataset.v);break;
     case 'mk-meta':mkMetaSet(+b.dataset.v);break;
+    case 'yt-status':ytSetStatus(id,b.dataset.s);break;
     case 'fin-pessoa':S.ui.finPessoa=b.dataset.v;render();break;
     case 'fin-salvar':finSalvar(id);break;
     case 'fin-apagar':finApagar(id);break;
@@ -2237,7 +2253,7 @@ function iconFor(lb){const l=normTit(lb);
   if(/envio/.test(l))return 'up';if(/salv/.test(l))return 'file';return 'target';}
 function cap(s){s=str(s);return s.charAt(0).toUpperCase()+s.slice(1);}
 function pctDelta(a,b){if(!b)return a>0?'<span class="delta">novo</span>':'';const p=Math.round((a-b)/b*100);if(!p)return '<span class="delta flat">estável</span>';return `<span class="delta ${p<0?'neg':''}">${p>0?'▲ +':'▼ '}${p}%</span>`;}
-function mkMeta(){const m=(S.config||{}).metas||{};return {reels:num(m.reelsDia)||5,stories:num(m.storiesDia)||10,est:num(m.estaticosSemana)||6};}
+function mkMeta(){const m=(S.config||{}).metas||{};return {reels:num(m.reelsDia)||2,stories:num(m.storiesDia)||5,est:num(m.estaticosSemana)||3,yt:num(m.youtubeSemana)||1};}
 function reelsDoDia(r){if(!r)return [];const c=S.config||{};
   const main={principal:true,hora:pad5(c.blocos?.postar||'12:00'),momento:'Principal',titulo:r.titulo,gancho:(ganchoSel(r)||{}).fala||'',gravar:r.formato||'',tela:r.textoTela||'',cta:r.cta?.fala||'',inspirado:r.inspirado||'',feito:stIdx(r)>=2,rid:r.id};
   const ex=arr(r.reels).map((x,i)=>({...x,i,hora:pad5(x.hora)||'',rid:r.id}));
@@ -2314,6 +2330,7 @@ function renderInicio(){
   const fonte=S.posts.some(p=>p.origem==='Metricool')?'Metricool':S.posts.length?'dados públicos do Instagram (vidIQ) até o Metricool sincronizar':'';
   el.innerHTML=`<div class="vg">
     ${helloHTML(h)}
+    ${placarHTML(h)}
     ${pulsoHTML(h)}
     ${avisosHTML(h)}
     ${hojeMktHTML(h)}
@@ -2345,10 +2362,10 @@ const REFS_V=[
 ];
 function renderMarketing(){
   const el=$('#v-marketing');const h=hojeISO();const sel=S.ui.mkDia||mkDiaPadrao();const seg=segunda(sel);const dias=[...Array(7)].map((_,i)=>addDays(seg,i));const m=mkMeta();const sc=semanaConta(seg);const r=rotDo(sel);
-  el.innerHTML=`<div class="mk-top"><div><div class="eyebrow">Plano de conteúdo</div><h1 class="h1">O que postar nesta semana</h1><p class="muted">Semana de ${ddmm(seg)} a ${ddmm(addDays(seg,6))} · ${m.reels} Reels por dia, stories o dia inteiro e estático com a frase pronta.</p></div>
+  el.innerHTML=`<div class="mk-top"><div><div class="eyebrow">Plano de conteúdo</div><h1 class="h1">O que postar nesta semana</h1><p class="muted">Semana de ${ddmm(seg)} a ${ddmm(addDays(seg,6))} · ${m.reels} Reels por dia (o principal e 1 do dia), ${m.stories} stories por dia e ${m.est} estáticos na semana.</p></div>
     <div class="mk-nav"><button class="btn sm" data-act="mk-sem" data-d="-7">‹ Semana anterior</button><button class="btn sm" data-act="mk-dia" data-d="${h}">Atual</button><button class="btn sm" data-act="mk-sem" data-d="7">Próxima ›</button></div></div>
   <section class="card mk-meta" style="margin-top:14px"><div class="pulso-h"><div><h3 class="ct">Meta de conteúdo da semana</h3><p>Contado pelo que você marca aqui e pelo Instagram (Metricool) · ${m.reels} Reels e ${m.stories} stories por dia, ${m.est} estáticos na semana</p></div>
-    <div class="seg" role="group" aria-label="Reels por dia">${[3,5,8,10].map(n=>`<button data-act="mk-meta" data-v="${n}" aria-pressed="${n===m.reels}">${n}/dia</button>`).join('')}</div></div>
+    <div class="seg" role="group" aria-label="Reels por dia">${[1,2,3,5].map(n=>`<button data-act="mk-meta" data-v="${n}" aria-pressed="${n===m.reels}">${n}/dia</button>`).join('')}</div></div>
     <div class="mk-meta-g">${meterV('Reels',sc.reels,m.reels*7)}${meterV('Estáticos e carrosséis',sc.est,m.est)}${meterV('Stories',sc.stories,m.stories*7)}</div></section>
   ${isLoading('roteiros')?'<p class="muted" style="margin-top:14px">Carregando…</p>':`<div class="mk-board" style="margin-top:14px" aria-label="Quadro da semana">${dias.map(d=>mkColuna(d,h,sel)).join('')}</div>`}
   ${r?mkDetalhe(r):`<section class="card" style="margin-top:14px"><p>Sem conteúdo planejado para ${esc(DIAS_L[dow(sel)])} ${ddmm(sel)}.</p><p class="muted sm" style="margin-top:4px">A IA diária escreve a semana seguinte todo domingo às 5h40.</p></section>`}
@@ -2414,20 +2431,20 @@ function palavraHTML(){return `<section class="card" style="margin-top:14px"><di
   <ol class="passos" style="margin-top:12px"><li><span>No fim do Reels você fala: <b>"Comenta OBRA que eu te mando as 3 coisas que eu olho antes de comprar um apartamento."</b></span></li><li><span>A pessoa comenta <b>OBRA</b> no seu vídeo. Cada comentário ajuda o vídeo a chegar em mais gente.</span></li><li><span>Você manda no direct dela a mensagem pronta abaixo. Ela responde, e essa conversa vira cliente da Vértice.</span></li></ol>
   <p class="muted sm" style="margin-top:10px">Para a mensagem cair sozinha no direct, use o ManyChat: gatilho "comentário com a palavra OBRA" e ação "enviar a mensagem abaixo". Sem ele, você responde na mão.</p>
   <div class="dm-g" style="margin-top:12px">${Object.entries(RESP_DM).map(([k,v])=>`<div class="rx-card"><span class="kw" style="justify-self:start">${k}</span><p class="muted sm">${esc(v.para)}</p><pre class="copyable" id="dm-${k}">${esc(v.msg)}</pre><div><button class="btn sm" data-act="copy" data-from="#dm-${k}">Copiar mensagem</button></div></div>`).join('')}</div></section>`;}
-function volumeHTML(m){return `<section class="card" style="margin-top:14px"><div class="eyebrow">Volume</div><h3 class="ct" style="margin-top:6px">Como chegar em 8 a 10 Reels por dia</h3>
-  <p class="muted sm" style="margin-top:4px">Hoje a meta é ${m.reels} por dia. Quem posta 8 a 10 por dia não grava tudo do zero: grava em bloco, registra o dia e corta conversa longa.</p>
+function volumeHTML(m){return `<section class="card" style="margin-top:14px"><div class="eyebrow">Volume</div><h3 class="ct" style="margin-top:6px">Como bater ${m.reels} Reels por dia sem travar a rotina</h3>
+  <p class="muted sm" style="margin-top:4px">Constância antes de volume: ${m.reels} por dia, todo dia, vale mais que 6 num dia e nenhum na semana seguinte.</p>
   <ol class="passos" style="margin-top:12px">
-   <li><span><b>Grave em bloco.</b> 20 minutos às 8h rendem 3 vídeos: troque de camisa e de lugar entre um e outro.</span></li>
-   <li><span><b>Registre o dia.</b> Academia, carro, escritório, obra e casa viram vídeos de 10 a 20 segundos com uma frase e a manchete na tela.</span></li>
-   <li><span><b>Uma conversa longa por semana.</b> Podcast ou live com um corretor, arquiteto ou investidor rende 8 a 10 cortes.</span></li>
-   <li><span><b>Uma ideia por vídeo.</b> Manchete grande nos 2 primeiros segundos e um pedido no fim.</span></li>
-   <li><span><b>Nada repetido.</b> Postar o mesmo vídeo duas vezes divide as views: em outubro, em 5 de 6 vídeos postados duas vezes, uma das cópias ficou com 0 ou 1 view.</span></li>
+   <li><span><b>O principal (12h).</b> Roteiro curto: abertura, o que desenvolver e fechamento. Grave no bloco das 8h, em até 3 tomadas.</span></li>
+   <li><span><b>O do dia.</b> 10 a 30 segundos de um momento real (Vértice, obra, visita, quinta de Operação Trovão), gravado na hora, com o resultado escrito na tela.</span></li>
+   <li><span><b>O YouTube alimenta a semana.</b> 1 vídeo longo rende 5 a 8 cortes. Faltou ideia? Poste um corte.</span></li>
+   <li><span><b>Uma ideia por vídeo.</b> Número ou promessa nos 3 primeiros segundos e um pedido no fim (OBRA, PLANTA, MAPA ou a Vértice).</span></li>
+   <li><span><b>Nada repetido.</b> 14 das suas 15 cópias e repostagens fizeram de 0 a 144 views. Pra testar versões, use o Reels de teste.</span></li>
   </ol></section>`;}
 function refsHTML(){return `<section class="card" style="margin-top:14px"><div class="eyebrow">Referências</div><h3 class="ct" style="margin-top:6px">Quem inspira o plano</h3><p class="muted sm" style="margin-top:4px">O que copiar de cada um: o método, não o conteúdo.</p>
   <div class="refs-v" style="margin-top:12px">${REFS_V.map(x=>`<div class="ref-v"><h4>${esc(x.n)}<small>${esc(x.h)}</small></h4><p>${esc(x.o)}</p><p class="cp"><b>Copiar:</b> ${esc(x.c)}</p>${x.e?`<p class="ev"><b>Evitar:</b> ${esc(x.e)}</p>`:''}</div>`).join('')}</div></section>`;}
 async function iaEstatico(id,btn){
   const r=byId(id);if(!r)return;const g=ganchoSel(r)||{};
-  const prompt=`${ctx()}\n\nROTEIRO DO REELS PRINCIPAL DESTE DIA (${r.data}, ${r.pilar}): "${r.titulo}". Gancho: ${g.fala||''}. CTA: ${r.cta?.palavra||'sem palavra-chave'}.\n\nTAREFA: crie o post estático (carrossel) deste dia para o feed do Jean. Ele complementa o Reels sem repetir o texto, e leva para o direct da Vértice Prime. Frases curtas, na voz do Jean, nada inventado (use [colchetes] para o que ele precisa preencher), sem prometer rentabilidade e sem usar o pai do Jean como personagem.\nResponda SOMENTE com um JSON: {"formato":"Carrossel","hora":"19:00","titulo":"título curto","objetivo":"1 frase sobre o que esse post faz pelo funil","slides":["capa com uma promessa forte","...","último slide com o CTA"],"design":"1 frase sobre a arte","legenda":"legenda com CTA e 3 hashtags"}. De 6 a 8 slides.`;
+  const prompt=`${ctx()}\n\nROTEIRO DO REELS PRINCIPAL DESTE DIA (${r.data}, ${r.pilar}): "${r.titulo}". Gancho: ${g.fala||''}. CTA: ${r.cta?.palavra||'sem palavra-chave'}.\n\nTAREFA: crie o post estático (carrossel) deste dia para o feed do Jean. Ele complementa o Reels sem repetir o texto, e leva para o direct da Vértice Prime. Frases curtas, na voz do Jean, nada inventado (use [colchetes] para o que ele precisa preencher), sem prometer rentabilidade e sem a narrativa de herdeiro ou sucessor (o pai do Jean só entra como referência, contado pelo Jean).\nResponda SOMENTE com um JSON: {"formato":"Carrossel","hora":"19:00","titulo":"título curto","objetivo":"1 frase sobre o que esse post faz pelo funil","slides":["capa com uma promessa forte","...","último slide com o CTA"],"design":"1 frase sobre a arte","legenda":"legenda com CTA e 3 hashtags"}. De 6 a 8 slides.`;
   const j=await ai(()=>S.sample.json(prompt,{cache:false}),btn,'Criando o carrossel…');if(!j)return;
   const e={formato:str(j.formato)||'Carrossel',hora:/^\d{2}:\d{2}$/.test(str(j.hora))?str(j.hora):'19:00',titulo:str(j.titulo),objetivo:str(j.objetivo),slides:arr(j.slides).map(str).filter(Boolean).slice(0,10),design:str(j.design),legenda:str(j.legenda),feito:false,origem:'IA no painel'};
   if(!e.titulo||!e.slides.length){toast('A IA não devolveu um carrossel completo. Tente de novo.');return;}
@@ -2436,6 +2453,73 @@ async function iaEstatico(id,btn){
 function abrirRot(id){const r=byId(id);if(!r)return;S.ui.abertos.set(id,true);S.ui.semana=segunda(r.data);location.hash='#roteiros';setTimeout(()=>{const x=document.getElementById('w-'+id);if(x)x.scrollIntoView({block:'start'});},150);}
 function mkReelToggle(id,i,on,el){const r=byId(id);if(!r)return;const L=arr(r.reels).map(x=>({...x}));if(!L[i])return;L[i].feito=on;L[i].feitoEm=on?new Date().toISOString():null;upd('roteiros/'+id,{reels:L}).catch(()=>{if(el)el.checked=!on;});}
 function mkMetaSet(n){const c=S.config||{};upd('config/main',{metas:{...(c.metas||{}),reelsDia:n}}).then(()=>toast(`Meta: ${n} Reels por dia.`)).catch(()=>{});}
+
+/* ---------- PLACAR DA META (Visão geral) ---------- */
+function ytRoteiros(){return (S.youtube||[]).filter(x=>x&&/^roteiro-/.test(x.id||'')).sort((a,b)=>String(b.data||b.id).localeCompare(String(a.data||a.id)));}
+function ytNaSemana(seg){const fim=addDays(seg,6);return ytRoteiros().filter(x=>x.status==='postado'&&String(x.postadoEm||'').slice(0,10)>=seg&&String(x.postadoEm||'').slice(0,10)<=fim).length;}
+function placarHTML(h){
+  const m=mkMeta();const seg=segunda(h),fim=addDays(seg,6);const sc=semanaConta(seg);const r=rotDo(h);
+  const rf=r?reelsDoDia(r).filter(x=>x.feito).length:0;const sf=r?arr(r.storiesFeitos).filter(Boolean).length:0;
+  const mes=h.slice(0,7);
+  const rMes=S.posts.filter(p=>(p.tipo||'reel')==='reel'&&String(p.data||'').slice(0,7)===mes&&!/(c[óo]pia|postado de novo|repostado|vers[ãa]o)/i.test(p.titulo||'')).length;
+  const ms=metaSeg();const at=segHist().at(-1);const dias=Math.max(1,diasEntre(h,ms.ate));
+  const row=(lb,n,meta,sub)=>{const p=meta?Math.min(100,Math.round(n/meta*100)):0;const f=Math.max(0,meta-n);
+    return `<div class="mm pl-i"><b>${esc(lb)}</b><div class="n">${fmtN(n)}<span> / ${fmtN(meta)}</span></div><div class="bar-v" role="img" aria-label="${n} de ${meta}"><i style="width:${n?Math.max(4,p):0}%"></i></div><small class="pl-s">${f?`faltam <b>${fmtN(f)}</b>`:'<b>meta batida</b>'}${sub?' · '+esc(sub):''}</small></div>`;};
+  const segRow=at?(()=>{const falta=Math.max(0,ms.alvo-at.v);const p=Math.min(100,Math.round(at.v/ms.alvo*100));
+    return `<div class="mm pl-i"><b>Seguidores até ${ddmm(ms.ate)}</b><div class="n">${fmtN(at.v)}<span> / ${fmtN(ms.alvo)}</span></div><div class="bar-v" role="img" aria-label="${p}% da meta"><i style="width:${Math.max(2,p)}%"></i></div><small class="pl-s">faltam <b>${fmtN(falta)}</b> · uns ${fmtN(Math.ceil(falta/dias))} por dia</small></div>`;})():'';
+  return `<section class="card placar"><div class="secthead"><div><div class="eyebrow">Placar da meta</div><h3 class="ct" style="margin-top:4px">Onde você está · semana de ${ddmm(seg)} a ${ddmm(fim)}</h3></div><a class="linkbtn" href="#marketing" data-act="mk-dia" data-d="${h}">O que postar hoje</a></div>
+  <p class="muted sm" style="margin-top:4px">Meta: ${m.reels} Reels e ${m.stories} stories por dia, ${m.est} estáticos e ${m.yt} vídeo no YouTube por semana.</p>
+  <div class="pl-g">${row('Reels hoje',rf,m.reels,sf?`${sf} stories`:'')}${row('Reels na semana',sc.reels,m.reels*7,`no mês: ${rMes}`)}${row('Stories na semana',sc.stories,m.stories*7,'')}${row('Estáticos na semana',sc.est,m.est,'')}${row('YouTube na semana',ytNaSemana(seg),m.yt,'')}${segRow}</div></section>`;
+}
+/* ---------- YOUTUBE (roteiro do vídeo da semana) ---------- */
+const YT_ST={a_gravar:'A gravar',gravado:'Gravado',postado:'Postado'};
+function ytSt(r){return YT_ST[(r&&r.status)||'a_gravar']||'A gravar';}
+function ytTexto(r){const ab=r.abertura||{},fe=r.fechamento||{},me=r.meio||{};const L=[];
+  L.push(r.titulo||'');if(r.capa&&r.capa.texto)L.push('Capa: '+r.capa.texto);L.push('');
+  L.push(`ABERTURA (${ab.tempo||'0:00'})`);if(ab.fala)L.push('"'+ab.fala+'"');if(ab.tela)L.push('Tela: '+ab.tela);L.push('');
+  arr(r.blocos).forEach((b,i)=>{L.push(`${i+1}. ${b.titulo||''} (${b.tempo||''})`);arr(b.desenvolver).forEach(x=>L.push('- '+x));if(b.mostrar)L.push('Mostre: '+b.mostrar);if(b.frase)L.push('Frase: "'+b.frase+'"');L.push('');});
+  if(me.fala){L.push('PEDIDO DO MEIO: '+me.fala);L.push('');}
+  L.push(`FECHAMENTO (${fe.tempo||''})`);if(fe.fala)L.push('"'+fe.fala+'"');if(fe.cta)L.push('Pedido final: '+fe.cta);
+  return L.join('\n');}
+function ytRoteiroHTML(r){
+  const id=esc(r.id);const st=r.status||'a_gravar';const ab=r.abertura||{},fe=r.fechamento||{},me=r.meio||{};
+  const li=a=>arr(a).map(x=>`<li>${esc(x)}</li>`).join('');
+  const bloco=(b,i)=>`<li><span class="k">${esc(b.tempo||'')}</span><div><p><b>${i+1}. ${esc(b.titulo||'')}</b></p>${arr(b.desenvolver).length?`<ul class="ul yt-ul">${li(b.desenvolver)}</ul>`:''}${b.mostrar?`<p class="v">Mostre: ${esc(b.mostrar)}</p>`:''}${b.frase?`<p class="yt-fr">Frase pra fechar o bloco: “${esc(b.frase)}”</p>`:''}${b.regra?`<p class="v">${esc(b.regra)}</p>`:''}</div></li>`;
+  const outros=arr(r.titulos).filter(x=>x&&x!==r.titulo);
+  const desc=(r.descricao||'')+(arr(r.tags).length?'\n\nTags: '+arr(r.tags).join(', '):'');
+  return `<section class="card yt-rot">
+   <div class="row-sb"><div class="fmt"><span class="ic">${IC.reels}</span><div><h3>Vídeo longo${r.duracao?' · '+esc(r.duracao):''}</h3><small>${esc(r.gravar||r.formato||'')}</small></div></div><span class="badge ${st==='postado'?'ok':''}">${esc(ytSt(r))}</span></div>
+   <h3 class="mk-title" style="margin-top:14px">${esc(r.titulo||'')}</h3>
+   ${outros.length?`<div class="sub-h">Outros títulos</div><ul class="ul">${li(outros)}</ul>`:''}
+   ${r.capa?`<div class="sub-h">Capa</div><p><b>${esc(r.capa.texto||'')}</b>${r.capa.foto?` · ${esc(r.capa.foto)}`:''}</p>`:''}
+   ${r.porque?`<div class="sub-h">Por que esse vídeo</div><p>${esc(r.porque)}</p>`:''}
+   ${arr(r.inspirado).length?`<div class="sub-h">De onde vem o estilo</div><ul class="ul">${arr(r.inspirado).map(x=>`<li><b>${esc(x.quem||'')}:</b> ${esc(x.oQue||'')}</li>`).join('')}</ul>`:''}
+   <div class="sub-h">Abertura · ${esc(ab.tempo||'0:00')}</div><p class="bigq">“${esc(ab.fala||'')}”</p>${ab.tela?`<p class="muted sm" style="margin-top:6px">Texto na tela: ${esc(ab.tela)}</p>`:''}${ab.mostrar?`<p class="muted sm" style="margin-top:4px">Mostre: ${esc(ab.mostrar)}</p>`:''}
+   <div class="sub-h">O que desenvolver, bloco por bloco</div><ol class="steps">${arr(r.blocos).map(bloco).join('')}</ol>
+   ${me.fala?`<div class="cta-box"><div class="sub-h">Pedido do meio${me.tempo?' · '+esc(me.tempo):''}</div><p>${esc(me.fala)}</p></div>`:''}
+   <div class="sub-h">Fechamento${fe.tempo?' · '+esc(fe.tempo):''}</div><p class="bigq yt-fe">“${esc(fe.fala||'')}”</p>${fe.cta?`<p style="margin-top:8px"><b class="lk">Pedido final:</b> ${esc(fe.cta)}</p>`:''}${fe.tela?`<p class="muted sm" style="margin-top:4px">Tela final: ${esc(fe.tela)}</p>`:''}
+   <pre id="yt-txt" hidden>${esc(ytTexto(r))}</pre>
+   <div class="actions"><button class="btn sm" data-act="copy" data-from="#yt-txt">Copiar o roteiro</button></div>
+   ${arr(r.cortes).length?`<div class="sub-h">Cortes pra Reels (${arr(r.cortes).length})</div><ol class="rx-list">${arr(r.cortes).map(x=>`<li><b>${esc(x.titulo||'')}</b><span>Gancho: “${esc(x.gancho||'')}”</span><em>${esc(x.trecho||'')}${x.cta?' · '+esc(x.cta):''}</em></li>`).join('')}</ol>`:''}
+   ${arr(r.checklist).length?`<div class="sub-h">Antes de gravar</div><ul class="ul">${li(r.checklist)}</ul>`:''}
+   ${arr(r.broll).length?`<div class="sub-h">Imagens de apoio</div><div class="chips">${arr(r.broll).map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div>`:''}
+   ${r.descricao?`<div class="sub-h">Descrição e capítulos (cole no YouTube)</div><pre class="copyable" id="yt-desc">${esc(desc)}</pre><button class="btn sm" data-act="copy" data-from="#yt-desc">Copiar descrição</button>`:''}
+   <div class="actions">${st==='a_gravar'?`<button class="btn primary" data-act="yt-status" data-id="${id}" data-s="gravado">Marcar gravado</button>`:''}${st!=='postado'?`<button class="btn" data-act="yt-status" data-id="${id}" data-s="postado">Marcar postado</button>`:`<button class="btn ghost" data-act="yt-status" data-id="${id}" data-s="a_gravar">Voltar pra a gravar</button>`}</div>
+  </section>`;
+}
+function renderYouTube(){
+  const el=$('#v-youtube');const h=hojeISO();const L=ytRoteiros();const r=L.find(x=>x.status!=='postado')||L[0];const m=mkMeta();
+  const seg=segunda(h),fim=addDays(seg,6);const feitos=ytNaSemana(seg);
+  const sn=[...S.snapshots].sort(byData).filter(x=>x.yt&&x.yt.inscritos!=null);const UL=sn.at(-1);
+  const last=[...S.analises].filter(a=>a.tipo==='youtube').sort((a,b)=>(a.criadoEm||'')<(b.criadoEm||'')?1:-1)[0];
+  el.innerHTML=`<div class="vhead"><div><div class="eyebrow dot">YouTube</div><h2 class="sec">Roteiro do <em>vídeo da semana</em></h2><p class="muted">Abertura, o que desenvolver em cada bloco e o fechamento. Grave seguindo os blocos e corte 5 a 8 Reels.</p></div><a class="btn" href="#analise" data-act="plat" data-v="yt">Números do canal</a></div>
+  <div class="kpis">${tile('Vídeo longo da semana',`${feitos}/${m.yt}`,'',`meta · ${ddmm(seg)} a ${ddmm(fim)}`,[],'play')}${tile('Inscritos',UL?compact(UL.yt.inscritos):'—','',UL?'em '+ddmm(UL.data):'',sn.map(x=>x.yt.inscritos))}${tile('Vídeos no canal',UL&&UL.yt.videos!=null?String(UL.yt.videos):'—','','longos e Shorts',[],'film')}</div>
+  ${isLoading('youtube')?'<p class="muted">Carregando…</p>':r?ytRoteiroHTML(r):'<section class="card"><p>Nenhum roteiro do YouTube ainda.</p><p class="muted sm" style="margin-top:4px">A IA diária escreve o próximo no domingo, quando o anterior estiver gravado.</p></section>'}
+  ${L.length>1?`<section class="card" style="margin-top:14px"><h3 class="ct">Outros roteiros</h3><ul class="yt-prev">${L.filter(x=>x!==r).map(x=>`<li><span>${esc(x.titulo||'')}</span><span class="badge ${x.status==='postado'?'ok':''}">${esc(ytSt(x))}</span></li>`).join('')}</ul></section>`:''}
+  ${last?`<section class="card" style="margin-top:14px"><div class="row-sb"><div class="eyebrow dot">O que já funcionou no seu canal</div><span class="muted sm">análise de ${ddmm((last.criadoEm||'').slice(0,10))}</span></div>${raioxResult(last.resultado)}</section>`:''}`;
+}
+async function ytSetStatus(id,s){const r=ytRoteiros().find(x=>x.id===id);if(!r)return;const now=new Date().toISOString();const patch={status:s};if(s==='gravado')patch.gravadoEm=now;if(s==='postado'){patch.postadoEm=now;if(!r.gravadoEm)patch.gravadoEm=now;}
+  try{await upd('youtube/'+id,patch);toast(s==='gravado'?'Gravado. Agora é editar e subir.':s==='postado'?'Postado. Corte os Reels e solte o primeiro hoje.':'Voltou pra a gravar.');}catch(e){}}
 
 /* ---------- AGENDA (estilo Google Agenda) ---------- */
 const GCAL='Google Calendar';const AG_H0=4,AG_H1=24,AG_PX=48;
@@ -2997,7 +3081,7 @@ function metaHTML(){
   const base=hist.find(x=>diasEntre(x.d,at.d)<=30&&diasEntre(x.d,at.d)>=3);
   const ritmo=base?(at.v-base.v)/Math.max(1,diasEntre(base.d,at.d)):null;
   const proj=ritmo!=null?Math.round(at.v+ritmo*dias):null;
-  const reels=dias*((S.config&&S.config.metas&&S.config.metas.reelsDia)||5);const porReel=falta/Math.max(1,reels);
+  const reels=dias*((S.config&&S.config.metas&&S.config.metas.reelsDia)||2);const porReel=falta/Math.max(1,reels);
   return `<section class="card meta-c">
     <div class="secthead"><h3 class="ct">Meta: ${fmtN(m.alvo)} seguidores até ${ddmmyy(m.ate)}</h3><span class="muted sm">${at.aprox?'número aproximado do perfil':'número exato'} · ${ddmm(at.d)}</span></div>
     <div class="meta-nums"><div><b>${fmtN(at.v)}</b><small>hoje</small></div><div><b>${fmtN(falta)}</b><small>faltam</small></div><div><b>${dias}</b><small>dias</small></div><div class="hl"><b>+${fmtN(Math.ceil(porDia))}</b><small>por dia</small></div></div>
@@ -3005,7 +3089,7 @@ function metaHTML(){
     <p class="meta-proj">${ritmo!=null?`No ritmo atual (${ritmo>=0?'+':''}${fmtN(ritmo)} por dia), você chega em <b>${fmtN(proj)}</b> em ${ddmmyy(m.ate)}. ${proj>=m.alvo?'Dá pra bater a meta mantendo o ritmo.':`Precisa de <b>${fmtN(Math.ceil(porDia-ritmo))} seguidores a mais por dia</b> do que o ritmo de hoje.`}`:'O ritmo atual aparece quando houver alguns dias de número de seguidores registrados.'}</p>
     <h4 class="sub-h">O que fazer pra bater</h4>
     <ol class="meta-plan">
-      <li><b>${fmtN(reels)} Reels até ${ddmm(m.ate)}</b> (${(S.config&&S.config.metas&&S.config.metas.reelsDia)||5} por dia). Cada um precisa trazer, em média, <b>${fmtN(Math.ceil(porReel))} seguidores</b>.</li>
+      <li><b>${fmtN(reels)} Reels até ${ddmm(m.ate)}</b> (${(S.config&&S.config.metas&&S.config.metas.reelsDia)||2} por dia). Cada um precisa trazer, em média, <b>${fmtN(Math.ceil(porReel))} seguidores</b>.</li>
       <li><b>Gancho nos 3 primeiros segundos</b> e texto na tela: é o que mais segura quem ainda não te segue.</li>
       <li><b>1 Reels de envio por semana</b> (checklist ou lista que a pessoa manda pra alguém): envio é o que leva o vídeo pra fora dos seus seguidores.</li>
       <li><b>Collab com um perfil maior</b> (corretor, arquiteto, investidor ou empresário da região): o mesmo Reels aparece pros dois públicos.</li>
